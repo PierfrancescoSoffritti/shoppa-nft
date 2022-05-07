@@ -1,0 +1,25 @@
+<div>has_nft: {{ product.metafields.my_fields.nft_data.value.has_nft }}</div>
+<div>nft_price: {{ product.metafields.my_fields.nft_data.value.nft_price }}</div>
+<div>wallet_address: {{ product.metafields.my_fields.nft_data.value.wallet_address }}</div>
+
+
+{% comment %} {% render "nft_data", nft_data: nft_data %} {% endcomment %}
+{% comment %} {% for data in nft_data %}
+  <p>{{ data.has_nft }}</p>
+{% endfor %} {% endcomment %}
+
+{% schema %}
+{
+  "type": "checkbox",
+  "id": "show_announcement",
+  "label": "Show announcement",
+  "default": true
+}
+{% endschema %}
+
+{% schema %}
+{
+    "name": "MY app block",
+    "target": "section"
+}
+{% endschema %}
